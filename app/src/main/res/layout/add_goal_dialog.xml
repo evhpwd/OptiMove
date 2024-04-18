@@ -4,15 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <EditText
+        android:id="@+id/nameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
-        <EditText
-            android:id="@+id/nameEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Goal"
-            android:textSize="20dp"/>
-    </RelativeLayout>
+        android:hint="@string/goal"
+        android:textSize="20sp"
+        android:importantForAutofill="no"
+        android:inputType="text" />
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.optimove;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,16 +17,21 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import com.example.optimove.calories.FoodItem;
+import com.example.optimove.calories.FoodAdapter;
+
 public class CalorieCount extends Fragment {
 
     private int totalCalories = 0;
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calorie_count, container, false);
         ProgressBar progressBar = view.findViewById(R.id.progress_bar);
         TextView progressText = view.findViewById(R.id.progress_text);
+        progressText.setText("0/2500");
 
         EditText foodName = view.findViewById(R.id.food_name_input);
         EditText foodCalories = view.findViewById(R.id.calorie_count_input);

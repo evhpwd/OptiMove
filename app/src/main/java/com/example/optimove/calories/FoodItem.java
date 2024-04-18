@@ -1,8 +1,8 @@
-package com.example.optimove;
+package com.example.optimove.calories;
 
 public class FoodItem {
-    private String name;
-    private int calories;
+    private final String name;
+    private final int calories;
 
     public FoodItem(String name, int calories) {
         this.name = name;

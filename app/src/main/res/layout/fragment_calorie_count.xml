@@ -21,16 +21,14 @@
             android:max="2500"
             android:progress="0"
             android:gravity="center"
-            android:progressDrawable="@drawable/custom_progress"
-        />
+            android:progressDrawable="@drawable/custom_progress" />
 
         <TextView
             android:id="@+id/progress_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:text="0/2500" />
+            android:gravity="center" />
     </FrameLayout>
 
     <EditText
@@ -40,9 +38,10 @@
         android:layout_marginTop="4dp"
         android:layout_below="@+id/progress_frame"
         android:ems="10"
-        android:hint="Food"
+        android:hint="@string/food"
         android:inputType="text"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/calorie_count_input"
@@ -51,9 +50,10 @@
         android:layout_marginTop="8dp"
         android:layout_below="@+id/food_name_input"
         android:ems="10"
-        android:hint="Calories"
+        android:hint="@string/calories"
         android:inputType="number"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/start_progess"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/calorie_count_input"
         android:layout_centerHorizontal="true"
-        android:text="Add Food"
+        android:text="@string/add_food"
         android:textAllCaps="false" />
 
     <androidx.recyclerview.widget.RecyclerView
