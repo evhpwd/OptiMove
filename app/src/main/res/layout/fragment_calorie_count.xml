@@ -1,82 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CalorieCount">
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="233dp"
-        android:layout_height="245dp"
-        android:layout_marginTop="48dp"
-        android:indeterminateOnly="false"
-        android:max="2500"
-        android:progress="0"
-        android:progressDrawable="@drawable/custom_progress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/progress_frame"
+        android:layout_width="245sp"
+        android:layout_height="245sp"
+        android:layout_centerHorizontal="true">
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminateOnly="false"
+            android:max="2500"
+            android:progress="0"
+            android:gravity="center"
+            android:progressDrawable="@drawable/custom_progress"
+        />
+
+        <TextView
+            android:id="@+id/progress_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="0/2500" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/food_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_below="@+id/progress_frame"
+        android:ems="10"
+        android:hint="Food"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/calorie_count_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/food_name_input"
+        android:ems="10"
+        android:hint="Calories"
+        android:inputType="number"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/start_progess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
+        android:layout_below="@+id/calorie_count_input"
+        android:layout_centerHorizontal="true"
         android:text="Add Food"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAllCaps="false" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/food_items"
         android:layout_width="390dp"
         android:layout_height="220dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_below="@+id/start_progess"
+ />
 
-    <EditText
-        android:id="@+id/food_name_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:hint="Food"
-        android:inputType="text"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
-
-    <EditText
-        android:id="@+id/calorie_count_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Calories"
-        android:inputType="number"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/food_name_input" />
-
-    <TextView
-        android:id="@+id/progress_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0/2500"
-        app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
-        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
-        app:layout_constraintStart_toStartOf="@+id/progress_bar"
-        app:layout_constraintTop_toTopOf="@+id/progress_bar" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
