@@ -14,8 +14,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class FitnessGoals extends Fragment {
 
+    private final ArrayList<String> savedGoals = new ArrayList<>();
     LinearLayout layout;
 
     @Override
@@ -24,9 +27,22 @@ public class FitnessGoals extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fitness_goals, container, false);
         layout = view.findViewById(R.id.container);
         AlertDialog dialog = buildDialog();
-
         view.findViewById(R.id.add_fitness_goal).setOnClickListener(v -> dialog.show());
+        for (String name: savedGoals) {
+            addCard(name);
+        }
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        savedGoals.clear();;
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            View view = layout.getChildAt(i);
+            TextView nameView = view.findViewById(R.id.name);
+            savedGoals.add(nameView.getText().toString());
+        }
     }
 
     private AlertDialog buildDialog() {
@@ -42,6 +58,8 @@ public class FitnessGoals extends Fragment {
 
         return builder.create();
     }
+
+
 
     private void addCard(String name) {
         @SuppressLint("InflateParams")
