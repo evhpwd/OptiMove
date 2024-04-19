@@ -13,4 +13,7 @@
     <string name="delete">Delete</string>
     <string name="name">Name</string>
     <string name="calorie_count">Calorie Count</string>
+    <string name="mark_as_complete">Mark as Complete</string>
+    <string name="example_workout_description_that_may_be_ever_so_long_and_continuous_and_long_and_long_and_describe_lots_of_working_out_u_gotta_do_to_stay_fit_fr">Example workout description that may be ever so long and continuous and long and long and describe lots of working out u gotta do to stay fit fr</string>
+    <string name="current_date">Current Date</string>
 </resources>
