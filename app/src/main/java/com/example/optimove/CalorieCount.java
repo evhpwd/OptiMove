@@ -23,6 +23,7 @@ import com.example.optimove.calories.FoodAdapter;
 public class CalorieCount extends Fragment {
 
     private int totalCalories = 0;
+    private final ArrayList<FoodItem> foodItems = new ArrayList<>();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -36,7 +37,6 @@ public class CalorieCount extends Fragment {
         EditText foodName = view.findViewById(R.id.food_name_input);
         EditText foodCalories = view.findViewById(R.id.calorie_count_input);
 
-        ArrayList<FoodItem> foodItems = new ArrayList<>();
         FoodAdapter adapter = new FoodAdapter(foodItems);
         RecyclerView foodItemsView = view.findViewById(R.id.food_items);
         foodItemsView.setAdapter(adapter);
